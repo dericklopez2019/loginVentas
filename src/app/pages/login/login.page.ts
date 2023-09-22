@@ -21,6 +21,9 @@ export class LoginPage implements OnInit {
     });
    }
   ngOnInit() {
+    localStorage.removeItem('login-token');
+    localStorage.removeItem('formVenta');
+    localStorage.removeItem('ListaVenta');
   }
   Login(){
     this.service.iniciar(this.formUsuario.value).subscribe(data=>{
@@ -28,6 +31,8 @@ export class LoginPage implements OnInit {
      this.router.navigate(['inicio']);
     });
     console.log(this.formUsuario.value);
+   
+
   }
  
 

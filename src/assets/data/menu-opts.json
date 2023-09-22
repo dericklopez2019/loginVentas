@@ -14,5 +14,10 @@
     "name": "Editar Venta",
     "redirectTo": "/editar-venta"
   }
-  
+  ,
+  {
+    "icon": "log-out-outline",
+    "name": "Cerrar Sesión",
+    "redirectTo": "/login"
+  }
 ]

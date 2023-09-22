@@ -11,10 +11,17 @@ import { ClienteService } from 'src/app/services/cliente.service';
 })
 export class InicioPage implements OnInit {
   componentes: Observable<Componente[]>;
+  lista: any[]=[];
   constructor(private menuCtrl: MenuController, private service: ClienteService ) { }
 
   ngOnInit() {
     this.componentes = this.service.getMenuOpts();
+    const formDataJSON = localStorage.getItem('ListaVenta');
+    if (formDataJSON) {
+      const formData = JSON.parse(formDataJSON);
+      console.log(formData);
+      this.lista.push(formData);
+    }
   }
   mostrarMenu(){
     this.menuCtrl.open('first');

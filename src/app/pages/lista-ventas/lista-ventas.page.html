@@ -10,8 +10,14 @@
 <ion-content [fullscreen]="true">
   <ion-item *ngFor  ="let item of vendedor" (click)="onClick(item)">
     <ion-label>
-      <h1>{{item.id}}</h1>
+      <h2>{{item.id}}</h2>
       <p>{{item.nombre}}</p>
+    </ion-label>
+    <ion-label slot="end">
+      <div>
+        <h1 style="font-size: 15px; font-weight: bold;">ventas:</h1>
+        <p>{{item.ventas}}</p>
+      </div>
     </ion-label>
   </ion-item>
 </ion-content>

@@ -13,7 +13,7 @@ export class EditarVentaPage implements OnInit {
     this.formVenta = this.fb.group({
       nombre: ['', [ Validators.required]],
       codigoBodega: ['', Validators.required],
-      venta: ['',[Validators.required]],
+      ventas: ['',[Validators.required]],
       
   
     });

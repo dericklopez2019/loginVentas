@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-editar-ventas',
@@ -9,12 +11,13 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class EditarVentasPage implements OnInit {
 
   formVenta: FormGroup;
-  constructor(private fb: FormBuilder, ) {
+  constructor(private fb: FormBuilder, private alertCtl: AlertController,private router: Router, ) {
     this.formVenta = this.fb.group({
       nombre: [''],
       codigoBodega: [''],
       ventas: [''],
     });
+    
    }
 
   ngOnInit() {
@@ -29,6 +32,21 @@ export class EditarVentasPage implements OnInit {
     const formData = this.formVenta.value;
    const formDataJSON = JSON.stringify(formData);
    localStorage.setItem('ListaVenta', formDataJSON);
-  }
+   this.mostrarAlerta();
+   this.router.navigate(['/inicio']);
 
+  }
+  async mostrarAlerta() {
+    const alert = await this.alertCtl.create({
+      header: 'Edición Completada',
+      message: 'Los cambios se guardaron correctamente.',
+      buttons: ['Aceptar'],
+    });
+
+    await alert.present();
+  }
 }
+
+
+
+
