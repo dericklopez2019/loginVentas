@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title color="primary">Crear nueva ventas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-grid>
+    <ion-row justify-content-center>
+      <ion-col align-self-center >
+        <div text-center>
+          <h4>Ingresar Venta</h4>
+        </div>
+        <form [formGroup]="formVenta">
+          <ion-item>
+            <ion-label>Nombre:</ion-label>
+            <ion-input formControlName="nombre"></ion-input>
+          </ion-item>
+          <ion-item>
+            <label>Codigo bodega:</label>
+            <ion-input formControlName="codigoBodega"></ion-input>
+          </ion-item>
+          <ion-item>
+            <label>Venta:</label>
+            <ion-input formControlName="venta"></ion-input>
+          </ion-item>
+          
+            
+        </form>
+        <p class="ion-text-center">
+          <ion-button type="submit" [disabled]="!formVenta.valid" (click)="ingresar()">Ingresar</ion-button>
+        </p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

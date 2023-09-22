@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+  <ion-content> 
+    <ion-grid>
+      <ion-row justify-content-center>
+        <ion-col align-self-center >
+          <div text-center>
+            <h4>Login</h4>
+          </div>
+          <form [formGroup]="formUsuario" >
+            <div padding>
+            <ion-item>  
+              <ion-label>Nombre Usuario:</ion-label>
+              <ion-input formControlName="nombre" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <label>Contraseña:</label>
+              <ion-input formControlName="clave" type="password"></ion-input>
+            </ion-item>
+          </div>
+         </form>
+         <div padding>
+         <p class="ion-text-center">
+           <ion-button type="submit" [disabled]="!formUsuario.valid" (click)="Login()">Iniciar sesión</ion-button>
+         </p>
+        </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-content>
+

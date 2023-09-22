@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button color="primary"></ion-back-button>
+    </ion-buttons>
+    <ion-title size="large" color="primary">Listado de ventas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item *ngFor  ="let item of vendedor" (click)="onClick(item)">
+    <ion-label>
+      <h1>{{item.id}}</h1>
+      <p>{{item.nombre}}</p>
+    </ion-label>
+  </ion-item>
+</ion-content>

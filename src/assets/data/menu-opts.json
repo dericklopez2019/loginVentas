@@ -1,0 +1,18 @@
+[
+  {
+    "icon": "list-outline",
+    "name": "Listar Venta",
+    "redirectTo": "/lista-ventas"
+  },
+  {
+    "icon": "person-add-outline",
+    "name": "Agregar Venta",
+    "redirectTo": "/crear-ventas"
+  },
+  {
+    "icon": "create-outline",
+    "name": "Editar Venta",
+    "redirectTo": "/editar-venta"
+  }
+  
+]
