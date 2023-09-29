@@ -15,13 +15,10 @@ export class InicioPage implements OnInit {
   constructor(private menuCtrl: MenuController, private service: ClienteService ) { }
 
   ngOnInit() {
+ 
+  }
+  ionViewDidEnter() {
     this.componentes = this.service.getMenuOpts();
-    const formDataJSON = localStorage.getItem('ListaVenta');
-    if (formDataJSON) {
-      const formData = JSON.parse(formDataJSON);
-      console.log(formData);
-      this.lista.push(formData);
-    }
   }
   mostrarMenu(){
     this.menuCtrl.open('first');

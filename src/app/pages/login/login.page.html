@@ -1,5 +1,27 @@
   <ion-content> 
-    <ion-grid>
+    <div class="flex-center">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-title color="primary">Login</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <form [formGroup]="formUsuario" >
+            <ion-item>
+              <ion-label>Nombre Usuario:</ion-label>
+              <ion-input position="floating" formControlName="nombre" type="text"></ion-input>
+            </ion-item>
+            <ion-item>
+              <label>Contraseña:</label>
+              <ion-input position="floating" formControlName="clave" type="password"></ion-input>
+            </ion-item>
+          </form>
+          <p class="ion-text-center">
+            <ion-button type="submit" [disabled]="!formUsuario.valid" (click)="Login()">Iniciar sesión</ion-button>
+          </p>
+        </ion-card-content>
+      </ion-card>
+    </div>
+    <!-- <ion-grid>
       <ion-row justify-content-center>
         <ion-col align-self-center >
           <div text-center>
@@ -24,6 +46,6 @@
         </div>
         </ion-col>
       </ion-row>
-    </ion-grid>
+    </ion-grid> -->
   </ion-content>
 
